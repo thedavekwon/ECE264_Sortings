@@ -12,12 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ab52625-c507-4bd3-8b09-526d3db628c4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ECE264_Sortings.dir/providedCode.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ECE264_Sortings.dir/providedCode.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ECE264_Sortings" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ECE264_Sortings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/providedCode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/providedCode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_o1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_o2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_o3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_o4.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/providedCode.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="192" column="66" lean-forward="true" selection-start-line="192" selection-start-column="66" selection-end-line="192" selection-end-column="66" />
+            <state relative-caret-position="441">
+              <caret line="545" column="16" selection-start-line="545" selection-start-column="16" selection-end-line="545" selection-end-column="16" />
               <folding>
                 <element signature="e#63#82#0" expanded="true" />
               </folding>
@@ -67,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/output.txt">
           <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="185">
-              <caret line="97" column="45" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
+            <state relative-caret-position="240">
+              <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -97,10 +95,13 @@
       <find>countARr</find>
       <find>bucket</find>
       <find>lll[i]</find>
-      <find>countArr</find>
       <find>countradix</find>
       <find>count</find>
       <find>countRadix</find>
+      <find>countArr</find>
+      <find>countRadix1</find>
+      <find>countBucket2</find>
+      <find>countsortint2</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -181,7 +182,10 @@
       <workItem from="1543538649250" duration="1635000" />
       <workItem from="1543609478260" duration="2803000" />
       <workItem from="1543706373715" duration="5204000" />
-      <workItem from="1543779595461" duration="23272000" />
+      <workItem from="1543779595461" duration="25865000" />
+      <workItem from="1543852657162" duration="12000" />
+      <workItem from="1543852685021" duration="4124000" />
+      <workItem from="1543859380438" duration="187000" />
     </task>
     <task id="LOCAL-00001" summary="insertion sort fixed">
       <created>1543708584994</created>
@@ -194,29 +198,29 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49077000" />
+    <option name="totallyTimeSpent" value="55993000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10378379" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10864865" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="CPU Profiler" weight="0.0" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18534961" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18534961" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.34739178" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.34628192" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.15316315" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.2008879" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32963374" />
+      <window_info anchor="bottom" id="CPU Profiler" order="13" weight="0.0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -281,17 +285,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/providedCode.cpp.1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="127" selection-start-line="127" selection-end-line="127" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/providedCode.cpp.1" />
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output.txt">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="240">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -302,17 +307,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/output.txt">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="185">
-          <caret line="97" column="45" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/providedCode.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="192" column="66" lean-forward="true" selection-start-line="192" selection-start-column="66" selection-end-line="192" selection-end-column="66" />
+        <state relative-caret-position="441">
+          <caret line="545" column="16" selection-start-line="545" selection-start-column="16" selection-end-line="545" selection-end-column="16" />
           <folding>
             <element signature="e#63#82#0" expanded="true" />
           </folding>

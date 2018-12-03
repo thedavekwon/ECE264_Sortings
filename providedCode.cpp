@@ -130,9 +130,14 @@ void insertionSortArr(list<Data *> &l);
 
 void countSortInt(list<Data *> &l);
 
+void countSortInt2(list<Data *> &l);
+
+
 void countSort(list<Data *> &l);
 
 void hybridRadixSort(list<Data *> &l);
+
+void hybridRadixSort2(list<Data *> &l);
 
 void sortDataList(list<Data *> &l, int field) {
     switch (field) {
@@ -145,12 +150,13 @@ void sortDataList(list<Data *> &l, int field) {
         case 2:
             //lsbRadixInt(l);
             countSortInt(l);
+            //countSortInt2(l);
             break;
         case 3:
             countSort(l);
             break;
         case 4:
-            hybridRadixSort(l);
+            hybridRadixSort2(l);
             break;
         default:
             break;
@@ -191,9 +197,11 @@ Data *lll[1048576];
 //Data *bucket[1000100];
 //vector<int> countRadix(radix, 0);
 //vector<vector<Data *>> countBucket(94, vector<Data *>(1000001));
-Data *countBucket1[65536][32];
-Data *countBucket[128][131072];
+Data *countBucket[128][32768];
+Data *countBucket1[65536][64];
+Data *countBucket2[2097153][32];
 int countRadix[65536] = {0};
+int countRadix1[2097153] = {0};
 int countArr[128] = {0};
 //vector<int> countRadixString(127, 0);
 // not completed
@@ -476,6 +484,68 @@ void countSortInt(list<Data *> &l) {
             }
         }
         digit++;
+    }
+
+    it = l.begin();
+    for (int i = 0; i < size; i++) (*it++) = lll[i];
+}
+
+void hybridRadixSort2(list<Data *> &l) {
+    auto it = l.begin();
+    const int size = l.size();
+
+    for (int i = 0; i < size; i++) {
+        auto d = (*it++);
+        unsigned int tmp = (d->val4[0] << 14) + (d->val4[1] << 7) + ((d->val4[2]));
+        countBucket2[tmp][countRadix1[tmp]++] = d;
+    }
+
+    int idx = 0;
+    for (int j = 0; j < 2097152; j++) {
+        for (int i = 0; i < countRadix1[j]; i++) {
+            lll[idx++] = countBucket2[j][i];
+        }
+    }
+
+    for (int i = 1; i < size; i++) {
+        auto tmp = lll[i];
+        int j = i - 1;
+        while (j >= 0 && lll[j]->val4 > tmp->val4) {
+            lll[j + 1] = lll[j];
+            j--;
+        }
+        lll[j + 1] = tmp;
+    }
+
+    it = l.begin();
+    for (int i = 0; i < size; i++) *(it++) = lll[i];
+}
+
+void countSortInt2(list<Data *> &l) {
+    const int size = l.size();
+    auto it = l.begin();
+
+    for (int i = 0; i < size; i++) {
+        auto d = (*it++);
+        unsigned int t = d->val2 >> 11;
+        countBucket2[t][countRadix1[t]++] = d;
+    }
+
+    int idx = 0;
+    for (int j = 0; j < 2097153; j++) {
+        for (int i = 0; i < countRadix1[j]; i++) {
+            lll[idx++] = countBucket2[j][i];
+        }
+    }
+
+    for (int i = 1; i < size; i++) {
+        auto tmp = lll[i];
+        int j = i - 1;
+        while (j >= 0 && lll[j]->val2 > tmp->val2) {
+            lll[j + 1] = lll[j];
+            j--;
+        }
+        lll[j + 1] = tmp;
     }
 
     it = l.begin();
