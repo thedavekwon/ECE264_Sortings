@@ -1,0 +1,4 @@
+/home/dodo/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.4284.156/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G "CodeBlocks - Unix Makefiles" /home/dodo/Programming/cplusplus-projects/ECE264_Sortings
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/dodo/Programming/cplusplus-projects/ECE264_Sortings/cmake-build-debug

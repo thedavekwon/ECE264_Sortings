@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/ECE264_Sortings.dir/providedCode.cpp.o  -o ECE264_Sortings 
