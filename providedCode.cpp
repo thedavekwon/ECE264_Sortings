@@ -130,14 +130,13 @@ void insertionSortArr(list<Data *> &l);
 
 void countSortInt(list<Data *> &l);
 
-void countSortInt2(list<Data *> &l);
-
-
 void countSort(list<Data *> &l);
 
-void hybridRadixSort(list<Data *> &l);
+//void hybridRadixSort(list<Data *> &l);
 
 void hybridRadixSort2(list<Data *> &l);
+
+//void hybridRadixSort3(list<Data *> &l);
 
 void sortDataList(list<Data *> &l, int field) {
     switch (field) {
@@ -150,7 +149,7 @@ void sortDataList(list<Data *> &l, int field) {
         case 2:
             //lsbRadixInt(l);
             countSortInt(l);
-            //countSortInt2(l);
+//            countSortInt2(l);
             break;
         case 3:
             countSort(l);
@@ -198,11 +197,11 @@ Data *lll[1048576];
 //vector<int> countRadix(radix, 0);
 //vector<vector<Data *>> countBucket(94, vector<Data *>(1000001));
 Data *countBucket[128][32768];
-Data *countBucket1[65536][64];
-Data *countBucket2[2097153][32];
-int countRadix[65536] = {0};
+Data *countBucket2[2097153][16];
+Data *countBucket3[131073][32];
 int countRadix1[2097153] = {0};
 int countArr[128] = {0};
+
 //vector<int> countRadixString(127, 0);
 // not completed
 //void insertionSortList(list<Data *> &l) {
@@ -266,15 +265,73 @@ int countArr[128] = {0};
 //    for (auto jt = ll.begin(); jt != ll.begin() + size; ++jt) { (*it++) = *jt; }
 //}
 
+// not finished
+//struct Node {
+//    Data *data;
+//    struct Node *prev, *next;
+//};
+//
+//void sortedInsert4(struct Node **head_ref, struct Node **tail_ref, struct Node *newNode) {
+//    struct Node *current;
+//
+//    if (*tail_ref == nullptr) {
+//        *tail_ref = newNode;
+//        *head_ref = newNode;
+//    } else {
+//        current = *tail_ref;
+//
+//        // locate the node after which the new node
+//        // is to be inserted
+//        while (current->prev != nullptr && current->prev->data->val4 > newNode->data->val4)
+//            current = current->prev;
+//
+//        if (current->prev != nullptr)
+//            current->prev->next = newNode;
+//        current->prev = newNode;
+//        newNode->next = current;
+//
+//        if (current->prev == nullptr) {
+//            current->prev = newNode;
+//            newNode->next = current;
+//            *head_ref = newNode;
+//        }
+//    }
+//}
+//
+//void push(struct Node **head_ref, struct Node **tail_ref, Data *new_data) {
+//    struct Node *new_node =
+//            (struct Node *) malloc(sizeof(struct Node));
+//    new_node->data = new_data;
+//    sortedInsert4(head_ref, tail_ref, new_node);
+//}
+
 // array
+//void insertionSortArr(list<Data *> &l) {
+//    int size = l.size();
+//    lll[0] = *l.begin();
+//
+//    auto it = next(l.begin());
+//    for (int i = 1; i < size; ++i) {
+//        auto tmp = (*it++);
+//        int j = i - 1;
+//        while (j >= 0 && lll[j]->val1 > tmp->val1) {
+//            lll[j + 1] = lll[j];
+//            --j;
+//        }
+//        lll[j + 1] = tmp;
+//    }
+//
+//    it = l.begin();
+//    for (int i = 0; i < size; i++) (*it++) = lll[i];
+//}
+
 void insertionSortArr(list<Data *> &l) {
     int size = l.size();
     lll[0] = *l.begin();
 
     auto it = next(l.begin());
     for (int i = 1; i < size; ++i) {
-        lll[i] = (*it++);
-        auto tmp = lll[i];
+        auto tmp = (*it++);
         int j = i - 1;
         while (j >= 0 && lll[j]->val1 > tmp->val1) {
             lll[j + 1] = lll[j];
@@ -411,83 +468,117 @@ void countSort(list<Data *> &l) {
     }
 }
 
-void hybridRadixSort(list<Data *> &l) {
+//void hybridRadixSort(list<Data *> &l) {
+//    auto it = l.begin();
+//    const int size = l.size();
+//    for (int i = 0; i < size; i++) lll[i] = *(it++);
+//    int digit = 2;
+//    while (digit >= 0) {
+//        memset(countArr, 0, sizeof(countArr));
+//
+//        if (digit == 2) {
+//            for (int i = 0; i < size; i++) {
+//                auto d = (*it++);
+//                int tmp = d->val4[digit];
+//                countBucket[tmp][countArr[tmp]++] = d;
+//            }
+//        } else {
+//            for (int i = 0; i < size; i++) {
+//                auto d = lll[i];
+//                int tmp = d->val4[digit];
+//                countBucket[tmp][countArr[tmp]++] = d;
+//            }
+//        }
+//
+//        int idx = 0;
+//        for (int j = 33; j < 127; j++) {
+//            for (int i = 0; i < countArr[j]; i++) {
+//                lll[idx++] = countBucket[j][i];
+//            }
+//        }
+//        digit--;
+//    }
+//
+//    for (int i = 1; i < size; i++) {
+//        auto tmp = lll[i];
+//        int j = i - 1;
+//        while (j >= 0 && lll[j]->val4 > tmp->val4) {
+//            lll[j + 1] = lll[j];
+//            j--;
+//        }
+//        lll[j + 1] = tmp;
+//    }
+//
+//    it = l.begin();
+//    for (int i = 0; i < size; i++) *(it++) = lll[i];
+//}
+
+//void countSortInt2(list<Data *> &l) {
+//    const int size = l.size();
+//    auto it = l.begin();
+//
+//    int digit = 0;
+//    while (digit < 2) {
+//        int tmp = digit << 4;
+//        memset(countRadix, 0, sizeof(countRadix));
+//        if (digit == 0) {
+//            for (int i = 0; i < size; i++) {
+//                auto d = (*it++);
+//                int t = (d->val2 >> (tmp)) & radix;
+//                countBucket1[t][countRadix[t]++] = d;
+//            }
+//        } else {
+//            for (int i = 0; i < size; i++) {
+//                int t = (lll[i]->val2 >> (tmp)) & radix;
+//                countBucket1[t][countRadix[t]++] = lll[i];
+//            }
+//        }
+//        if (digit == 1) break;
+//        int idx = 0;
+//        for (int j = 0; j < 65536; j++) {
+//            for (int i = 0; i < countRadix[j]; i++) {
+//                lll[idx++] = countBucket1[j][i];
+//            }
+//        }
+//        digit++;
+//    }
+//
+//    it = l.begin();
+//    for (int j = 0; j < 65536; j++) {
+//        for (int i = 0; i < countRadix[j]; i++) {
+//            (*it++) = countBucket1[j][i];
+//        }
+//    }
+//}
+
+void countSortInt(list<Data *> &l) {
     auto it = l.begin();
     const int size = l.size();
-//    for (int i = 0; i < size; i++) lll[i] = *(it++);
-    int digit = 2;
-    while (digit >= 0) {
-        memset(countArr, 0, sizeof(countArr));
 
-        if (digit == 2) {
-            for (int i = 0; i < size; i++) {
-                auto d = (*it++);
-                int tmp = d->val4[digit];
-                countBucket[tmp][countArr[tmp]++] = d;
-            }
-        } else {
-            for (int i = 0; i < size; i++) {
-                auto d = lll[i];
-                int tmp = d->val4[digit];
-                countBucket[tmp][countArr[tmp]++] = d;
-            }
-        }
+    for (int i = 0; i < size; i++) {
+        auto d = (*it++);
+        auto t = d->val2 >> 15;
+        countBucket3[t][countRadix1[t]++] = d;
+    }
 
-        int idx = 0;
-        for (int j = 33; j < 127; j++) {
-            for (int i = 0; i < countArr[j]; i++) {
-                lll[idx++] = countBucket[j][i];
-            }
+    int idx = 0;
+    for (int j = 0; j < 131073; j++) {
+        for (int i = 0; i < countRadix1[j]; i++) {
+            lll[idx++] = countBucket3[j][i];
         }
-        digit--;
     }
 
     for (int i = 1; i < size; i++) {
         auto tmp = lll[i];
         int j = i - 1;
-        while (j >= 0 && lll[j]->val4 > tmp->val4) {
+        while (j >= 0 && lll[j]->val2 > tmp->val2) {
             lll[j + 1] = lll[j];
             j--;
         }
-        lll[j + 1] = tmp;
+        if (j != i - 1) lll[j + 1] = tmp;
     }
-
     it = l.begin();
     for (int i = 0; i < size; i++) *(it++) = lll[i];
-}
-
-void countSortInt(list<Data *> &l) {
-    const int size = l.size();
-    auto it = l.begin();
-
-    int digit = 0;
-    while (digit < 2) {
-        int tmp = digit << 4;
-        memset(countRadix, 0, sizeof(countRadix));
-        // count frequencies
-        if (digit == 0) {
-            for (int i = 0; i < size; i++) {
-                auto d = (*it++);
-                int t = (d->val2 >> (tmp)) & radix;
-                countBucket1[t][countRadix[t]++] = d;
-            }
-        } else {
-            for (int i = 0; i < size; i++) {
-                int t = (lll[i]->val2 >> (tmp)) & radix;
-                countBucket1[t][countRadix[t]++] = lll[i];
-            }
-        }
-        int idx = 0;
-        for (int j = 0; j < 65536; j++) {
-            for (int i = 0; i < countRadix[j]; i++) {
-                lll[idx++] = countBucket1[j][i];
-            }
-        }
-        digit++;
-    }
-
-    it = l.begin();
-    for (int i = 0; i < size; i++) (*it++) = lll[i];
 }
 
 void hybridRadixSort2(list<Data *> &l) {
@@ -496,39 +587,8 @@ void hybridRadixSort2(list<Data *> &l) {
 
     for (int i = 0; i < size; i++) {
         auto d = (*it++);
-        unsigned int tmp = (d->val4[0] << 14) + (d->val4[1] << 7) + ((d->val4[2]));
+        auto tmp = (d->val4[0] << 14) + (d->val4[1] << 7) + ((d->val4[2]));
         countBucket2[tmp][countRadix1[tmp]++] = d;
-    }
-
-    int idx = 0;
-    for (int j = 0; j < 2097152; j++) {
-        for (int i = 0; i < countRadix1[j]; i++) {
-            lll[idx++] = countBucket2[j][i];
-        }
-    }
-
-    for (int i = 1; i < size; i++) {
-        auto tmp = lll[i];
-        int j = i - 1;
-        while (j >= 0 && lll[j]->val4 > tmp->val4) {
-            lll[j + 1] = lll[j];
-            j--;
-        }
-        lll[j + 1] = tmp;
-    }
-
-    it = l.begin();
-    for (int i = 0; i < size; i++) *(it++) = lll[i];
-}
-
-void countSortInt2(list<Data *> &l) {
-    const int size = l.size();
-    auto it = l.begin();
-
-    for (int i = 0; i < size; i++) {
-        auto d = (*it++);
-        unsigned int t = d->val2 >> 11;
-        countBucket2[t][countRadix1[t]++] = d;
     }
 
     int idx = 0;
@@ -541,13 +601,70 @@ void countSortInt2(list<Data *> &l) {
     for (int i = 1; i < size; i++) {
         auto tmp = lll[i];
         int j = i - 1;
-        while (j >= 0 && lll[j]->val2 > tmp->val2) {
+        while (j >= 0 && lll[j]->val4 > tmp->val4) {
             lll[j + 1] = lll[j];
             j--;
         }
-        lll[j + 1] = tmp;
+        if (j != i - 1) lll[j + 1] = tmp;
     }
-
     it = l.begin();
-    for (int i = 0; i < size; i++) (*it++) = lll[i];
+    for (int i = 0; i < size; i++) *(it++) = lll[i];
 }
+
+// not finished
+//void hybridRadixSort3(list<Data *> &l) {
+//    auto it = l.begin();
+//    const int size = l.size();
+//
+//    for (int i = 0; i < size; i++) {
+//        auto d = (*it++);
+//        auto tmp = (d->val4[0] << 14) + (d->val4[1] << 7) + ((d->val4[2]));
+//        countBucket2[tmp][countRadix1[tmp]++] = d;
+//    }
+//
+//    struct Node *head = NULL;
+//    struct Node *tail = head;
+//    for (int j = 0; j < 2097153; j++) {
+//        for (int i = 0; i < countRadix1[j]; i++) {
+//            push(&head, &tail, countBucket2[j][i]);
+//        }
+//    }
+//
+//    it = l.begin();
+//    for (int i = 0; i < size; i++) {
+//        *(it++) = head->data;
+//        head = head->next;
+//    }
+//}
+
+//
+//void countSortInt2(list<Data *> &l) {
+//    const int size = l.size();
+//    auto it = l.begin();
+//
+//    for (int i = 0; i < size; i++) {
+//        auto d = (*it++);
+//        unsigned int t = d->val2 >> 11;
+//        countBucket2[t][countRadix1[t]++] = d;
+//    }
+//
+//    int idx = 0;
+//    for (int j = 0; j < 2097153; j++) {
+//        for (int i = 0; i < countRadix1[j]; i++) {
+//            lll[idx++] = countBucket2[j][i];
+//        }
+//    }
+//
+//    for (int i = 1; i < size; i++) {
+//        auto tmp = lll[i];
+//        int j = i - 1;
+//        while (j >= 0 && lll[j]->val2 > tmp->val2) {
+//            lll[j + 1] = lll[j];
+//            j--;
+//        }
+//        lll[j + 1] = tmp;
+//    }
+//
+//    it = l.begin();
+//    for (int i = 0; i < size; i++) (*it++) = lll[i];
+//}

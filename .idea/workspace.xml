@@ -13,9 +13,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4ab52625-c507-4bd3-8b09-526d3db628c4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ECE264_Sortings.dir/providedCode.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ECE264_Sortings.dir/providedCode.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ECE264_Sortings" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ECE264_Sortings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/providedCode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/providedCode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/t.sh" beforeDir="false" afterPath="$PROJECT_DIR$/t.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,8 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/providedCode.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="545" column="16" selection-start-line="545" selection-start-column="16" selection-end-line="545" selection-end-column="16" />
+            <state relative-caret-position="142">
+              <caret line="201" column="28" selection-start-line="201" selection-start-column="28" selection-end-line="201" selection-end-column="28" />
               <folding>
                 <element signature="e#63#82#0" expanded="true" />
               </folding>
@@ -102,6 +104,9 @@
       <find>countRadix1</find>
       <find>countBucket2</find>
       <find>countsortint2</find>
+      <find>head</find>
+      <find>push</find>
+      <find>sortedInsert4</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -186,6 +191,8 @@
       <workItem from="1543852657162" duration="12000" />
       <workItem from="1543852685021" duration="4124000" />
       <workItem from="1543859380438" duration="187000" />
+      <workItem from="1543943141119" duration="4748000" />
+      <workItem from="1543959338783" duration="2145000" />
     </task>
     <task id="LOCAL-00001" summary="insertion sort fixed">
       <created>1543708584994</created>
@@ -198,25 +205,25 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55993000" />
+    <option name="totallyTimeSpent" value="62886000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10864865" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.111891896" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.18534961" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34739178" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.34739178" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.34628192" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.2008879" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.0" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32963374" />
@@ -309,8 +316,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/providedCode.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="545" column="16" selection-start-line="545" selection-start-column="16" selection-end-line="545" selection-end-column="16" />
+        <state relative-caret-position="142">
+          <caret line="201" column="28" selection-start-line="201" selection-start-column="28" selection-end-line="201" selection-end-column="28" />
           <folding>
             <element signature="e#63#82#0" expanded="true" />
           </folding>
