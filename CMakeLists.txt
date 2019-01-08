@@ -3,4 +3,4 @@ project(ECE264_Sortings)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(ECE264_Sortings providedCode.cpp)
+add_executable(ECE264_Sortings main.cpp)

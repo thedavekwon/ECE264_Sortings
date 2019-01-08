@@ -611,33 +611,6 @@ void hybridRadixSort2(list<Data *> &l) {
     for (int i = 0; i < size; i++) *(it++) = lll[i];
 }
 
-// not finished
-//void hybridRadixSort3(list<Data *> &l) {
-//    auto it = l.begin();
-//    const int size = l.size();
-//
-//    for (int i = 0; i < size; i++) {
-//        auto d = (*it++);
-//        auto tmp = (d->val4[0] << 14) + (d->val4[1] << 7) + ((d->val4[2]));
-//        countBucket2[tmp][countRadix1[tmp]++] = d;
-//    }
-//
-//    struct Node *head = NULL;
-//    struct Node *tail = head;
-//    for (int j = 0; j < 2097153; j++) {
-//        for (int i = 0; i < countRadix1[j]; i++) {
-//            push(&head, &tail, countBucket2[j][i]);
-//        }
-//    }
-//
-//    it = l.begin();
-//    for (int i = 0; i < size; i++) {
-//        *(it++) = head->data;
-//        head = head->next;
-//    }
-//}
-
-//
 //void countSortInt2(list<Data *> &l) {
 //    const int size = l.size();
 //    auto it = l.begin();

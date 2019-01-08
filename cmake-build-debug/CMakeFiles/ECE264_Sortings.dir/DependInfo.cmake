@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/dodo/Programming/cplusplus-projects/ECE264_Sortings/providedCode.cpp" "/home/dodo/Programming/cplusplus-projects/ECE264_Sortings/cmake-build-debug/CMakeFiles/ECE264_Sortings.dir/providedCode.cpp.o"
+  "/home/dodo/CLionProjects/ECE264_Sortings/providedCode.cpp" "/home/dodo/CLionProjects/ECE264_Sortings/cmake-build-debug/CMakeFiles/ECE264_Sortings.dir/providedCode.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

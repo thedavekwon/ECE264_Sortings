@@ -1,5 +1,5 @@
 #!/bin/bash
-g++ providedCode.cpp -std=c++11
+g++ main.cpp -std=c++11
 ./a.out < input1.txt
 diff output.txt sample_o1.txt
 ./a.out < input2.txt
